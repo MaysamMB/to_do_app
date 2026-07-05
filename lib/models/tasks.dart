@@ -1,7 +1,13 @@
 class Task {
-  int id;
-  String title;
-  String description;
-  bool isCompleted = false;
-  Task(this.id, this.title, this.description, this.isCompleted);
+  final String id;
+  final String title;
+  final String description;
+  final bool isCompleted;
+
+  const Task({
+    required this.id,
+    required this.title,
+    required this.description,
+    this.isCompleted = false,
+  });
 }
