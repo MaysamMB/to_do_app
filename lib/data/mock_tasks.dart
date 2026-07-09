@@ -7,6 +7,7 @@ const List<Task> mockTasks = [
     title: 'Study Flutter',
     description: 'Finish learning Flutter widgets and layouts.',
     isCompleted: false,
+    priority: 'High',
   ),
   Task(
     name: 'Banan',
@@ -14,6 +15,7 @@ const List<Task> mockTasks = [
     title: 'Complete Dart Exercises',
     description: 'Solve practice problems on functions and collections.',
     isCompleted: true,
+    priority: 'Low',
   ),
   Task(
     name: 'Ayham',
@@ -21,6 +23,7 @@ const List<Task> mockTasks = [
     title: 'Read Riverpod Documentation',
     description: 'Understand the basics of state management.',
     isCompleted: false,
+    priority: 'High',
   ),
   Task(
     name: 'Moath',
@@ -28,6 +31,7 @@ const List<Task> mockTasks = [
     title: 'Workout',
     description: 'Go to the gym for one hour.',
     isCompleted: true,
+    priority: 'Mid',
   ),
   Task(
     name: 'Manal',
@@ -35,6 +39,7 @@ const List<Task> mockTasks = [
     title: 'Buy Groceries',
     description: 'Milk, eggs, bread, and fruits.',
     isCompleted: false,
+    priority: 'Low',
   ),
   Task(
     name: 'Tala',
@@ -42,6 +47,7 @@ const List<Task> mockTasks = [
     title: 'Prepare Presentation',
     description: 'Finish the slides for the Flutter project.',
     isCompleted: true,
+    priority: 'Mid',
   ),
   Task(
     name: 'Raneen',
@@ -49,13 +55,15 @@ const List<Task> mockTasks = [
     title: 'Train for Presentation',
     description: 'Finish Train for the Flutter project Presentation.',
     isCompleted: false,
+    priority: 'High',
   ),
-    Task(
+  Task(
     name: 'Samah',
     id: '8',
     title: 'Review Git Basics',
     description: 'Practice branching, merging, and resolving conflicts.',
     isCompleted: false,
+    priority: 'Low',
   ),
   Task(
     name: '',
@@ -63,6 +71,7 @@ const List<Task> mockTasks = [
     title: 'Write Unit Tests',
     description: 'Add unit tests for the task repository.',
     isCompleted: true,
+    priority: 'Low',
   ),
   Task(
     name: 'Noura',
@@ -70,6 +79,7 @@ const List<Task> mockTasks = [
     title: 'Refactor Code',
     description: 'Improve code readability and remove duplication.',
     isCompleted: false,
+    priority: 'High',
   ),
   Task(
     name: 'Lama',
@@ -77,6 +87,7 @@ const List<Task> mockTasks = [
     title: 'Update Resume',
     description: 'Add recent Flutter projects and new skills.',
     isCompleted: true,
+    priority: 'Mid',
   ),
   Task(
     name: 'Maysam',
@@ -84,6 +95,7 @@ const List<Task> mockTasks = [
     title: 'Read Clean Code',
     description: 'Finish two chapters from the Clean Code book.',
     isCompleted: true,
+    priority: 'Mid',
   ),
   Task(
     name: 'Joy',
@@ -91,6 +103,7 @@ const List<Task> mockTasks = [
     title: 'Build Todo App',
     description: 'Implement CRUD operations with Riverpod.',
     isCompleted: false,
+    priority: 'High',
   ),
   Task(
     name: 'Shemaa',
@@ -98,6 +111,7 @@ const List<Task> mockTasks = [
     title: 'Fix UI Bugs',
     description: 'Resolve layout issues on small screen devices.',
     isCompleted: true,
+    priority: 'Low',
   ),
   Task(
     name: 'Sara',
@@ -105,6 +119,7 @@ const List<Task> mockTasks = [
     title: 'Practice Algorithms',
     description: 'Solve three array and string problems.',
     isCompleted: false,
+    priority: 'High',
   ),
   Task(
     name: '',
@@ -112,6 +127,7 @@ const List<Task> mockTasks = [
     title: 'Organize Workspace',
     description: 'Clean the desk and organize project files.',
     isCompleted: true,
+    priority: 'Low',
   ),
   Task(
     name: '',
@@ -119,5 +135,6 @@ const List<Task> mockTasks = [
     title: 'Plan Next Sprint',
     description: 'Create tasks and priorities for the upcoming week.',
     isCompleted: false,
+    priority: 'High',
   ),
 ];

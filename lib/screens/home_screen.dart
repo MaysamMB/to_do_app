@@ -1,23 +1,47 @@
-  import 'package:flutter/material.dart';
-  import '../models/tasks.dart';
-  import '../widgets/task_card.dart';
-  import '../data/mock_tasks.dart';
+import 'package:flutter/material.dart';
+import 'package:to_do_app/widgets/add_note.dart';
+import 'package:to_do_app/widgets/home_header_card.dart';
+// import '../models/tasks.dart';
+import '../widgets/task_card.dart';
+import '../data/mock_tasks.dart';
 
-  class HomeScreen extends StatelessWidget {
-    const HomeScreen({super.key});
-    // https://colorhunt.co/palette/f9e8a2b4e1eb95bdd778a4cb => color link
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('My Tasks'),
-          backgroundColor: const Color(0xFF95BDD7),
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+  // https://colorhunt.co/palette/f9e8a2b4e1eb95bdd778a4cb => color link
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFFBEFEF),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const HomeHeaderCard(),
+            AddNote(),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(left: 12, top: 20),
+              child: Text(
+                'My Tasks',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: mockTasks.length,
+                itemBuilder: ((context, index) {
+                  return TaskCard(task: mockTasks[index]);
+                }),
+              ),
+            ),
+          ],
         ),
-        body: ListView.builder(
-          itemCount: mockTasks.length,
-          itemBuilder: ((context, index) {
-            return TaskCard(task: mockTasks[index]);
-          }),),
-      );
-    }
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFFC5B3D3),
+        child: Icon(Icons.add, color: Colors.white),
+      ),
+    );
   }
+}

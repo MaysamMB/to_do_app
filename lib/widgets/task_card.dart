@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/data/mock_tasks.dart';
+// import 'package:to_do_app/data/mock_tasks.dart';
 
 import '../models/tasks.dart';
 
@@ -15,13 +15,13 @@ class TaskCard extends StatelessWidget {
         enabled: task.isCompleted ? true : false,
 
         tileColor: task.isCompleted
-            ? const Color(0xFFF9E8A2)
-            : const Color.fromARGB(186, 229, 228, 223),
-        trailing: Text(task.id.toString(), style: TextStyle()),
+            ? const Color(0xFFFFE2E2)
+            : const Color(0xFFFFFFFF),
+        leading: Text(task.id.toString(), style: TextStyle()),
         title: Text(
           task.title,
           style: TextStyle(
-            color: const Color(0xFF95BDD7),
+            color: const Color(0xFFC5B3D3),
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),

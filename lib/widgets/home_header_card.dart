@@ -14,7 +14,7 @@ class HomeHeaderCard extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: const Color(0xFFB4E1EB),
+            color: const Color(0xFFFFE2E2),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(50),
           ),
@@ -51,7 +51,8 @@ class HomeHeaderCard extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        border: Border.all(),
+        border: Border.all(color: Colors.white),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(50),
       ),
       child: IconButton(onPressed: () {}, icon: Icon(icon)),
