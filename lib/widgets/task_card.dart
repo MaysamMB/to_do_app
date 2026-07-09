@@ -10,6 +10,7 @@ class TaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ListTile(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         enabled: task.isCompleted ? true : false,
@@ -22,7 +23,7 @@ class TaskCard extends StatelessWidget {
           task.title,
           style: TextStyle(
             color: const Color(0xFFC5B3D3),
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),

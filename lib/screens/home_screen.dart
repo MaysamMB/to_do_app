@@ -5,9 +5,14 @@ import 'package:to_do_app/widgets/home_header_card.dart';
 import '../widgets/task_card.dart';
 import '../data/mock_tasks.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color.fromARGB(255, 253, 195, 195),
+        backgroundColor: Color(0xFFC5B3D3).withValues(alpha: 0.8),
         child: Icon(Icons.add, color: Colors.white),
       ),
     );
