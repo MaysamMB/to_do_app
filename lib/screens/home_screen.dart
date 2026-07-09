@@ -7,7 +7,7 @@ import '../data/mock_tasks.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-  // https://colorhunt.co/palette/f9e8a2b4e1eb95bdd778a4cb => color link
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color(0xFFC5B3D3),
+        backgroundColor: Color.fromARGB(255, 253, 195, 195),
         child: Icon(Icons.add, color: Colors.white),
       ),
     );
