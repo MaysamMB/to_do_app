@@ -6,7 +6,7 @@ const List<Task> mockTasks = [
     id: '1',
     title: 'Study Flutter',
     description: 'Finish learning Flutter widgets and layouts.',
-    isCompleted: false,
+    isCompleted: true,
     priority: 'High',
   ),
   Task(
