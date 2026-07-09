@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/widgets/add_note.dart';
 import 'package:to_do_app/widgets/home_header_card.dart';
-// import '../models/tasks.dart';
+import '../models/tasks.dart';
 import '../widgets/task_card.dart';
 import '../data/mock_tasks.dart';
 
@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Task> tasks = [...mockTasks];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +35,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: mockTasks.length,
+                itemCount: tasks.length,
                 itemBuilder: ((context, index) {
-                  return TaskCard(task: mockTasks[index]);
+                  return TaskCard(
+                    task: tasks[index],
+                    onComplete: () {
+                      setState(() {
+                        tasks[index] = tasks[index].copyWith(
+                          isCompleted: !tasks[index].isCompleted,
+                        );
+                      });
+                    },
+                    onDetails: () {},
+                  );
                 }),
               ),
             ),
