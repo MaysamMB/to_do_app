@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/screens/details_screen.dart';
 import 'package:to_do_app/widgets/add_note.dart';
 import 'package:to_do_app/widgets/home_header_card.dart';
 import '../models/tasks.dart';
@@ -49,7 +50,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       });
                     },
-                    onDetails: () {},
+                    onDetails: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsScreen(task: tasks[index]),
+                        ),
+                      );
+                    },
                   );
                 }),
               ),
