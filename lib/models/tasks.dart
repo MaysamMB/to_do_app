@@ -4,6 +4,7 @@ class Task {
   final String description;
   final bool isCompleted;
   final String name;
+  final String priority;
 
   const Task({
     required this.name,
@@ -11,5 +12,6 @@ class Task {
     required this.title,
     required this.description,
     this.isCompleted = false,
+    required this.priority,
   });
 }
