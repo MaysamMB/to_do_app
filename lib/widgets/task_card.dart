@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:to_do_app/data/mock_tasks.dart';
-
+import 'package:to_do_app/theme/app_theme.dart';
 import '../models/tasks.dart';
 
 class TaskCard extends StatelessWidget {
@@ -18,15 +17,14 @@ class TaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: ListTile(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         enabled: !task.isCompleted,
 
         tileColor: task.isCompleted
-            ? const Color(0xFFFFE2E2)
-            : const Color(0xFFFFFFFF),
-        // leading: Text(task.id.toString(), style: TextStyle()),
+            ? AppTheme.secondary.withValues(alpha: 0.15)
+            : AppTheme.surface,
         leading: GestureDetector(
           onTap: onComplete,
           child: Container(
@@ -34,10 +32,10 @@ class TaskCard extends StatelessWidget {
             height: 25,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
-              border: Border.all(color: const Color(0xFFC5B3D3), width: 2),
-              color: task.isCompleted
-                  ? const Color(0xFFC5B3D3)
-                  : Colors.transparent,
+              border: task.isCompleted
+                  ? null
+                  : Border.all(color: AppTheme.primary, width: 1),
+              color: task.isCompleted ? AppTheme.secondary : Colors.transparent,
             ),
             child: task.isCompleted
                 ? const Icon(Icons.check, size: 18, color: Colors.white)
@@ -46,22 +44,15 @@ class TaskCard extends StatelessWidget {
         ),
         trailing: IconButton(
           onPressed: onDetails,
-          icon: const Icon(Icons.arrow_forward_ios),
-        ),
-        title: Text(
-          task.title,
-          style: TextStyle(
-            color: const Color(0xFFC5B3D3),
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          icon: Icon(
+            Icons.arrow_forward_ios,
+            color: Theme.of(context).iconTheme.color,
           ),
         ),
+        title: Text(task.title, style: Theme.of(context).textTheme.titleLarge),
         subtitle: Text(
           "Priority: ${task.priority}",
-          style: TextStyle(
-            color: Color.fromARGB(255, 187, 175, 196),
-            fontWeight: FontWeight.w600,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
     );

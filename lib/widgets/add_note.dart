@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/theme/app_theme.dart';
 
 class AddNote extends StatelessWidget {
   AddNote({super.key});
@@ -16,12 +17,17 @@ class AddNote extends StatelessWidget {
               Text(
                 'My Evernote',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               Text(
                 'Today ${today.day}/${today.month}/${today.year}',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(fontSize: 18),
               ),
             ],
           ),
@@ -29,8 +35,8 @@ class AddNote extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            miniCard("New Note", Color(0xFFC5B3D3)),
-            miniCard("New Reminder", Color(0xFFF5CBCB)),
+            miniCard("New Note", AppTheme.primary),
+            miniCard("New Reminder", AppTheme.secondary),
           ],
         ),
       ],
@@ -42,12 +48,12 @@ class AddNote extends StatelessWidget {
       alignment: Alignment.centerLeft,
       width: 180,
       height: 170,
-      padding: EdgeInsets.only(left: 18),
+      padding: const EdgeInsets.only(left: 18),
       decoration: BoxDecoration(
         color: colors,
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: EdgeInsets.only(bottom: 10, top: 5),
+      margin: const EdgeInsets.only(bottom: 10, top: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,12 +62,15 @@ class AddNote extends StatelessWidget {
           Container(
             width: 50,
             height: 50,
-            margin: EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: AppTheme.surface.withValues(alpha: 0.9),
               borderRadius: BorderRadius.circular(50),
             ),
-            child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.add, color: AppTheme.primary),
+            ),
           ),
           Text(
             'Create',

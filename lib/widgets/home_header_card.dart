@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/mock_tasks.dart';
+import 'package:to_do_app/theme/app_theme.dart';
 
 class HomeHeaderCard extends StatelessWidget {
   const HomeHeaderCard({super.key});
@@ -14,13 +15,17 @@ class HomeHeaderCard extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: const Color(0xFFFFE2E2),
+            color: AppTheme.secondary.withValues(alpha: 0.2),
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(50),
           ),
           child: Text(
             mockTasks[0].name[0],
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: AppTheme.primary,
+            ),
           ),
         ),
         Expanded(
@@ -29,7 +34,7 @@ class HomeHeaderCard extends StatelessWidget {
             children: [
               Text(
                 "Hi, ${mockTasks[0].name} 👋",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ],
           ),
@@ -51,11 +56,14 @@ class HomeHeaderCard extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white),
-        color: Colors.white,
+        border: Border.all(color: AppTheme.primary.withValues(alpha: 0.08)),
+        color: AppTheme.surface,
         borderRadius: BorderRadius.circular(50),
       ),
-      child: IconButton(onPressed: () {}, icon: Icon(icon)),
+      child: IconButton(
+        onPressed: () {},
+        icon: Icon(icon, color: AppTheme.primary),
+      ),
     );
   }
 }

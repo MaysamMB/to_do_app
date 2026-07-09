@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBEFEF),
+      // backgroundColor: Color(0xFFFBEFEF),
       body: SafeArea(
         child: Column(
           children: [
@@ -29,7 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.only(left: 12, top: 20),
               child: Text(
                 'My Tasks',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                ),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -56,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color(0xFFC5B3D3).withValues(alpha: 0.8),
-        child: Icon(Icons.add, color: Colors.white),
+        // backgroundColor: Color(0xFFC5B3D3).withValues(alpha: 0.8),
+        child: const Icon(Icons.add),
       ),
     );
   }
