@@ -4,6 +4,7 @@ import 'package:to_do_app/widgets/description_card.dart';
 import 'package:to_do_app/widgets/details_card.dart';
 import 'package:to_do_app/widgets/details_header.dart';
 import 'package:to_do_app/theme/app_theme.dart';
+import 'package:to_do_app/widgets/task_info.dart';
 
 class DetailsScreen extends StatefulWidget {
   final Task task;
@@ -29,6 +30,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           children: [
             DetailsHeader(),
             DetailsCard(task: widget.task, onComplete: widget.onComplete),
+            TaskInfo(task: widget.task),
             DescriptionCard(task: widget.task),
           ],
         ),
