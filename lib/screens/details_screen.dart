@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/models/tasks.dart';
+import 'package:to_do_app/screens/details_header.dart';
+import 'package:to_do_app/theme/app_theme.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Task task;
@@ -9,8 +11,8 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(task.title)),
-      body: Column(children: [Text(task.description)]),
+      backgroundColor: AppTheme.background,
+      body: SafeArea(child: Column(children: [DetailsHeader()])),
     );
   }
 }
