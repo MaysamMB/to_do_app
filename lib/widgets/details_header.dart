@@ -8,16 +8,26 @@ class DetailsHeader extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(24),
+          padding: EdgeInsets.only(top: 24, bottom: 24, right: 24, left: 3),
 
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Task Details",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      Text(
+                        "Task Details",
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                    ],
                   ),
                   Row(
                     children: [
