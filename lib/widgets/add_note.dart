@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/theme/app_theme.dart';
+import 'package:to_do_app/widgets/mini_card.dart';
 
 class AddNote extends StatelessWidget {
-  AddNote({super.key});
-  final today = DateTime.now();
+  const AddNote({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final today = DateTime.now();
     return Column(
       children: [
         Container(
@@ -16,7 +17,7 @@ class AddNote extends StatelessWidget {
             children: [
               Text(
                 'My Evernote',
-                textAlign: TextAlign.left,
+                // textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
@@ -35,61 +36,11 @@ class AddNote extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            miniCard("New Note", AppTheme.primary),
-            miniCard("New Reminder", AppTheme.secondary),
+            MiniCard(text: "New Note", color: AppTheme.primary),
+            MiniCard(text: "New Reminder", color: AppTheme.secondary),
           ],
         ),
       ],
-    );
-  }
-
-  Widget miniCard(String text, Color colors) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      width: 180,
-      height: 170,
-      padding: const EdgeInsets.only(left: 18),
-      decoration: BoxDecoration(
-        color: colors,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      margin: const EdgeInsets.only(bottom: 10, top: 5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-
-        children: [
-          Container(
-            width: 50,
-            height: 50,
-            margin: const EdgeInsets.only(bottom: 10),
-            decoration: BoxDecoration(
-              color: AppTheme.surface.withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.add, color: AppTheme.primary),
-            ),
-          ),
-          Text(
-            'Create',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
-            ),
-          ),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 23,
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
