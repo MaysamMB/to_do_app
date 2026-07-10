@@ -62,11 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return DetailsScreen(
                               task: tasks[index],
                               onComplete: () {
-                                setState(() {
-                                  tasks[index] = tasks[index].copyWith(
-                                    isCompleted: !tasks[index].isCompleted,
-                                  );
-                                });
+                                toggleTaskCompletion(index);
                               },
                             );
                           },
