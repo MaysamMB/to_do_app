@@ -28,19 +28,23 @@ class AppTheme {
         fontWeight: FontWeight.bold,
         color: primary,
       ),
+      bodyLarge: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+        color: primary,
+      ),
 
       bodyMedium: TextStyle(fontSize: 16, color: textMuted),
-
       titleMedium: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w500,
         color: Colors.white,
       ),
-
+      headlineMedium: TextStyle(fontWeight: FontWeight.w600),
       headlineSmall: TextStyle(
         fontSize: 23,
         fontWeight: FontWeight.w700,
-        color: Colors.white,
+        color: primary,
       ),
     ),
 
