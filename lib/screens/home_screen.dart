@@ -73,17 +73,24 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget cardHeader() {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.only(left: 12, top: 20),
-      child: Text(
-        'My Tasks',
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-          fontSize: 25,
-          fontWeight: FontWeight.w600,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.only(left: 12, top: 20),
+            child: Text(
+              'My Tasks (${tasks.length.toString()})',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontSize: 25,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
         ),
-        textAlign: TextAlign.left,
-      ),
+        
+      ],
     );
   }
 }
