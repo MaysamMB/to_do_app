@@ -9,22 +9,36 @@ class DescriptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Text(
-        task.description,
-        textAlign: TextAlign.right,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-          color: AppTheme.textMuted,
-          fontSize: 18,
-          height: 1.8,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+
+      children: [
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Text(
+            "Description",
+            style: Theme.of(context).textTheme.headlineSmall,
+            textAlign: TextAlign.start,
+          ),
         ),
-      ),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Text(
+            task.description,
+            textAlign: TextAlign.justify,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              color: AppTheme.textMuted,
+              fontSize: 18,
+              height: 1.8,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
