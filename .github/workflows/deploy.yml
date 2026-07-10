@@ -25,6 +25,7 @@ jobs:
         with:
           channel: beta
           flutter-version: "3.46.0-0.3.pre"
+      - run: flutter clean
 
       - run: flutter pub get
 
