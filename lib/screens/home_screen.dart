@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/screens/details_screen.dart';
-import 'package:to_do_app/widgets/quick_actions_card%20.dart';
+import 'package:to_do_app/widgets/quick_actions_card.dart';
 import 'package:to_do_app/widgets/home_header_card.dart';
 import '../models/tasks.dart';
 import '../widgets/task_card.dart';
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             const HomeHeaderCard(),
-            AddNote(),
+            QuickActionsCard(),
             Container(
               width: double.infinity,
               margin: EdgeInsets.only(left: 12, top: 20),
