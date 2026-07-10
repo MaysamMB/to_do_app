@@ -27,24 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xFFFBEFEF),
       body: SafeArea(
         child: Column(
           children: [
             const HomeHeaderCard(),
             QuickActionsCard(),
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(left: 12, top: 20),
-              child: Text(
-                'My Tasks',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
-                textAlign: TextAlign.left,
-              ),
-            ),
+            cardHeader(),
             Expanded(
               child: ListView.builder(
                 itemCount: tasks.length,
@@ -80,6 +68,21 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {},
         // backgroundColor: Color(0xFFC5B3D3).withValues(alpha: 0.8),
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  Widget cardHeader() {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.only(left: 12, top: 20),
+      child: Text(
+        'My Tasks',
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+        ),
+        textAlign: TextAlign.left,
       ),
     );
   }
