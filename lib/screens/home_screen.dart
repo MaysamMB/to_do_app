@@ -14,6 +14,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  void toggleTaskCompletion(int index) {
+    setState(() {
+      tasks[index] = tasks[index].copyWith(
+        isCompleted: !tasks[index].isCompleted,
+      );
+    });
+  }
+
   List<Task> tasks = [...mockTasks];
 
   @override
@@ -44,18 +52,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   return TaskCard(
                     task: tasks[index],
                     onComplete: () {
-                      setState(() {
-                        tasks[index] = tasks[index].copyWith(
-                          isCompleted: !tasks[index].isCompleted,
-                        );
-                      });
+                      toggleTaskCompletion(index);
                     },
                     onDetails: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              DetailsScreen(task: tasks[index]),
+                          builder: (context) {
+                            return DetailsScreen(
+                              task: tasks[index],
+                              onComplete: () {
+                                setState(() {
+                                  tasks[index] = tasks[index].copyWith(
+                                    isCompleted: !tasks[index].isCompleted,
+                                  );
+                                });
+                              },
+                            );
+                          },
                         ),
                       );
                     },
