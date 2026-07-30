@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DetailsHeader extends StatelessWidget {
-  const DetailsHeader({super.key});
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  const DetailsHeader({
+    super.key,
+    required this.onEdit,
+    required this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +16,6 @@ class DetailsHeader extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.only(top: 24, bottom: 24, right: 24, left: 3),
-
           child: Column(
             children: [
               Row(
@@ -19,9 +25,7 @@ class DetailsHeader extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: const Icon(Icons.arrow_back),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
+                        onPressed: () => Navigator.pop(context),
                       ),
                       Text(
                         "Task Details",
@@ -32,11 +36,11 @@ class DetailsHeader extends StatelessWidget {
                   Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: onEdit,
                         icon: const Icon(Icons.edit_outlined),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: onDelete,
                         icon: const Icon(Icons.delete_outline),
                       ),
                     ],
